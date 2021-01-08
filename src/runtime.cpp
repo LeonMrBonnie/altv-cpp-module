@@ -1,10 +1,5 @@
 #include "runtime.h"
 
-CppRuntime::CppRuntime()
-{
-    sdk = new Core();
-}
-
 alt::IResource::Impl* CppRuntime::CreateImpl(alt::IResource* impl)
 {
     auto resource = new CppResource(this, impl);

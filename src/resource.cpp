@@ -43,7 +43,7 @@ bool CppResource::Start()
     if(eventFunc != NULL) eventFunc = event;
     #endif
 
-    mainFunc(runtime->GetSDK());
+    mainFunc(&alt::ICore::Instance());
 
     return true;
 }

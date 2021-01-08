@@ -7,7 +7,7 @@
 #endif
 
 // SDK
-#include "module-sdk/Main.h"
+#include "cpp-sdk/SDK.h"
 #include "Log.h"
 
 // Module
