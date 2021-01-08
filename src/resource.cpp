@@ -4,12 +4,12 @@
 #include "windows.h"
 #define _getlib(name) LoadLibraryA(name)
 #define _getfunc(module, name, type) (type)GetProcAddress(module, name);
-#define _seperator "/"
+#define _seperator "\\"
 #else
 #include <dlfcn.h>
 #define _getlib(name) dlopen(name, RTLD_NOW);
 #define _getfunc(module, name, type) (type)dlsym(module, name);
-#define _seperator "\\"
+#define _seperator "/"
 #endif
 
 CppResource::CppResource(CppRuntime* runtime, alt::IResource* resource)
