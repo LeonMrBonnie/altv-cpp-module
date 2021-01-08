@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_definitions(-DMODULE_NAME="${PROJECT_MODULE_NAME}")
-add_definitions(-DALT_${MODULE_TYPE}_API)
+add_definitions(-DALT_SERVER_API)
 add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 
 if(UNIX)
