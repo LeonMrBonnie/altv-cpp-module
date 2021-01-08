@@ -37,10 +37,10 @@ bool CppResource::Start()
     mainFunc = main;
 
     auto stop = (StopFunction)GetProcAddress(module, "Stop");
-    if(stopFunc != NULL) stopFunc = stop;
+    stopFunc = stop;
 
     auto event = (EventFunction)GetProcAddress(module, "OnEvent");
-    if(eventFunc != NULL) eventFunc = event;
+    eventFunc = event;
     #endif
 
     mainFunc(&alt::ICore::Instance());
@@ -50,12 +50,12 @@ bool CppResource::Start()
 
 bool CppResource::Stop()
 {
-    if(stopFunc) stopFunc();
+    if(stopFunc != NULL) stopFunc();
     return true;
 }
 
-bool CppResource::OnEvent(const alt::CEvent* event)
+bool CppResource::OnEvent(const alt::CEvent* ev)
 {
-    if(!eventFunc) return true;
-    else return eventFunc(event);
+    if(eventFunc == NULL) return true;
+    else return eventFunc(ev);
 }
