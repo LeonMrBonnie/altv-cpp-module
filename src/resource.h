@@ -3,24 +3,27 @@
 
 class CppRuntime;
 class CppResource : public alt::IResource::Impl
-{
+{   
+    using MainFunction = void (*)(alt::ICore* core);
+    using StopFunction = void (*)();
+    using EventFunction = bool (*)(const alt::CEvent* ev);
+
+    CppRuntime* runtime;
+    alt::IResource* resource;
+    std::string main;
+
+    MainFunction mainFunc;
+    StopFunction stopFunc;
+    EventFunction eventFunc;
+
 public:
     CppResource(CppRuntime* runtime, alt::IResource* resource);
-    ~CppResource();
+    ~CppResource() = default;
 
-    bool Start()
-    {
-        return true;
-    }
-    bool Stop()
-    {
-        return true;
-    }
+    bool Start();
+    bool Stop();
 
-    bool OnEvent(const alt::CEvent *ev)
-    {
-        return true;
-    }
+    bool OnEvent(const alt::CEvent* event);
     void OnTick()
     {
 
