@@ -19,6 +19,9 @@ CppResource::CppResource(CppRuntime* runtime, alt::IResource* resource)
     main.append(resource->GetPath().CStr());
     main.append(_seperator);
     main.append(resource->GetMain().CStr());
+    #ifdef IS_UNIX
+    main.append(_seperator);
+    #endif
 }
 
 bool CppResource::Start()
@@ -27,6 +30,9 @@ bool CppResource::Start()
     if(module == NULL)
     {
         Log::Error << "Failed to open main file" << Log::Endl;
+        #ifdef IS_UNIX
+        Log::Error << dlerror() << Log::Endl;
+        #endif
         return false;
     }
 
