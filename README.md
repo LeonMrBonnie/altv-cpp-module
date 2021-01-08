@@ -4,6 +4,14 @@
 
 To build the project simply run the `build.bat` file.
 
+## How to use
+
+Look at the [example resource](https://github.com/LeonMrBonnie/altv-cpp-example-resource) to see how to use this module.<br>
+This module is a very simple wrapper, so don't expect anything fancy.<br>
+In your resource you still have to use the C++ SDK from alt:V.<br>
+This only imports the these three functions from your resource: `Start, Stop, OnEvent`.<br>
+If you don't know what those functions do, look at the example resource.
+
 ## Credits
 
 - drake - For helping with setting up the module and moral support
