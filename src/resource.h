@@ -1,10 +1,11 @@
 #pragma once
 #include "cpp-module.h"
+#include "sdk/Core.h"
 
 class CppRuntime;
 class CppResource : public alt::IResource::Impl
 {   
-    using MainFunction = void (*)(alt::ICore* core);
+    using MainFunction = void (*)(Core* core);
     using StopFunction = void (*)();
     using EventFunction = bool (*)(const alt::CEvent* ev);
 

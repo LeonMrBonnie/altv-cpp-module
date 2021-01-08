@@ -2,7 +2,7 @@
 
 CppRuntime::CppRuntime()
 {
-
+    sdk = new Core();
 }
 
 alt::IResource::Impl* CppRuntime::CreateImpl(alt::IResource* impl)

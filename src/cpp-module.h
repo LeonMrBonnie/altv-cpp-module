@@ -7,8 +7,9 @@
 #endif
 
 // SDK
-#include "cpp-sdk/SDK.h"
+#include "alt-sdk/SDK.h"
 #include "Log.h"
+#include "module-sdk/Main.h"
 
 // Module
 #include "runtime.h"

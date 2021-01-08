@@ -1,3 +1,6 @@
-[submodule "deps/cpp-sdk"]
-	path = deps/cpp-sdk
+[submodule "deps/module-sdk"]
+	path = deps/module-sdk
+	url = git@github.com:LeonMrBonnie/altv-cpp-module-sdk.git
+[submodule "deps/alt-sdk"]
+	path = deps/alt-sdk
 	url = https://github.com/altmp/cpp-sdk.git

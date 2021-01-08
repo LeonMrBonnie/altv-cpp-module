@@ -28,7 +28,7 @@ bool CppResource::Start()
         return false;
     }
 
-    auto main = (MainFunction)GetProcAddress(module, "Main");
+    auto main = (MainFunction)GetProcAddress(module, "Start");
     if(main == NULL)
     {
         Log::Error << "Main entrypoint not found" << Log::Endl;
@@ -43,7 +43,7 @@ bool CppResource::Start()
     if(eventFunc != NULL) eventFunc = event;
     #endif
 
-    mainFunc(&alt::ICore::Instance());
+    mainFunc(runtime->GetSDK());
 
     return true;
 }
