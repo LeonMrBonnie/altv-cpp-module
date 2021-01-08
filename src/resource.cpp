@@ -19,9 +19,6 @@ CppResource::CppResource(CppRuntime* runtime, alt::IResource* resource)
     main.append(resource->GetPath().CStr());
     main.append(_seperator);
     main.append(resource->GetMain().CStr());
-    #ifdef IS_UNIX
-    main.append(_seperator);
-    #endif
 }
 
 bool CppResource::Start()
